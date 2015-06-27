@@ -1,4 +1,3 @@
-require 'pry'
 require 'twilio-ruby'
 
 class PotlucksController < ApplicationController
@@ -31,7 +30,6 @@ class PotlucksController < ApplicationController
   end
 
   def twilio_client
-    binding.pry
     @client ||= Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN']
   end
 end
