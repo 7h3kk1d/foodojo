@@ -8,6 +8,8 @@ gem 'spring', group: :development
 
 gem 'pg'
 
+gem 'active_model_serializers', '~> 0.8.0'
+
 group :test do
   gem 'rspec'
 end

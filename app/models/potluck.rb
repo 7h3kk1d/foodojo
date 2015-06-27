@@ -1,4 +1,4 @@
 class Potluck < ActiveRecord::Base
   has_many :participants
-  has_many :persons, through: :participants
+  has_many :people, through: :participants
 end

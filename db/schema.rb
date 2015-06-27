@@ -11,29 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_150_627_181_144) do
+ActiveRecord::Schema.define(version: 20150627181144) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
-  enable_extension 'uuid-ossp'
+  enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table 'participants', force: :cascade do |t|
-    t.integer 'potlucks_id'
-    t.integer 'persons_id'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+  create_table "participants", force: :cascade do |t|
+    t.integer  "potluck_id"
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'persons', force: :cascade do |t|
-    t.string 'name'
-    t.string 'phone_number'
-    t.datetime 'created_at',   null: false
-    t.datetime 'updated_at',   null: false
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table 'potlucks', id: :uuid, default: 'uuid_generate_v4()', force: :cascade do |t|
-    t.string 'recipe_id'
-    t.string 'owner_venmo'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
+  create_table "potlucks", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "recipe_id"
+    t.string   "owner_venmo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
 end
