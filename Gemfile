@@ -10,6 +10,14 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
+group :test do
+  gem 'rspec'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'rubocop'
+end
 
 
 # To use ActiveModel has_secure_password
