@@ -4,6 +4,7 @@ class InitialMigration < ActiveRecord::Migration
     create_table :potlucks, id: :uuid do |t|
       t.string :recipe_id
       t.string :owner_venmo
+      t.integer :recipe_ids, array: true
       t.timestamps null: false
     end
 

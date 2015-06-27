@@ -10,14 +10,22 @@ gem 'pg'
 
 gem 'active_model_serializers', '~> 0.8.0'
 
+gem 'twilio-ruby'
+
 group :test do
   gem 'rspec'
+end
+
+group :development do
+  gem 'guard'
+  gem 'guard-rails'
 end
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 # To use ActiveModel has_secure_password
