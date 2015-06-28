@@ -1,4 +1,4 @@
 class Person < ActiveRecord::Base
-  has_one :participants
-  has_one :potluck, through: :participants
+  has_one :participant
+  has_one :potluck, through: :participant
 end

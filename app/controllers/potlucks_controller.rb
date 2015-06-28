@@ -8,7 +8,8 @@ class PotlucksController < ApplicationController
     params[:potluck].fetch(:people, []).each do
       |person|
 
-      potluck.people.create name: person.fetch(:name, nil), phone_number: person.fetch(:phone_number, nil)
+      new_person = Person.create name: person.fetch(:name, nil), phone_number: person.fetch(:phone_number, nil)
+      Participant.create person: new_person, potluck: potluck, venmo_payment: person.fetch(:venmo_payment, nil)
     end
 
     potluck.participants.each do
