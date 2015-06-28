@@ -1,5 +1,5 @@
 class PotluckSerializer < ActiveModel::Serializer
-  attributes :id, :owner_venmo, :recipes
+  attributes :id, :owner_venmo, :recipes, :total_cost
 
   def recipes
     object.recipe_ids

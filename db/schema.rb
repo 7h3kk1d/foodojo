@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150627181144) do
   create_table "potlucks", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "owner_venmo"
     t.integer  "recipe_ids",               array: true
+    t.integer  "total_cost"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

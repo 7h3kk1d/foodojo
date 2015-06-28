@@ -26,7 +26,7 @@ class PotlucksController < ApplicationController
   private
 
   def potluck_params
-    params.require(:potluck).permit(:owner_venmo)
+    params.require(:potluck).permit(:owner_venmo, :total_cost)
   end
 
   def twilio_client
